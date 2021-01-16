@@ -94,12 +94,12 @@ for i in groups:
             desc="Switch to group {}".format(i.name)),
 
         # mod1 + shift + letter of group = switch to & move focused window to group
-        Key([mod, "shift"], i.name, lazy.window.togroup(i.name, switch_group=True),
-            desc="Switch to & move focused window to group {}".format(i.name)),
+        #Key([mod, "shift"], i.name, lazy.window.togroup(i.name, switch_group=True),
+        #    desc="Switch to & move focused window to group {}".format(i.name)),
         # Or, use below if you prefer not to switch to that group.
-        # # mod1 + shift + letter of group = move focused window to group
-        # Key([mod, "shift"], i.name, lazy.window.togroup(i.name),
-        #     desc="move focused window to group {}".format(i.name)),
+        # mod1 + shift + letter of group = move focused window to group
+        Key([mod, "shift"], i.name, lazy.window.togroup(i.name),
+            desc="move focused window to group {}".format(i.name)),
     ])
 
 layouts = [
@@ -146,9 +146,9 @@ screens = [
                 #widget.TextBox("default config", name="default"),
                 #widget.TextBox("Press &lt;M-r&gt; to spawn", foreground="#d75f5f"),
                 #widget.Systray(),
-                #widget.CPUGraph(),
-                widget.Battery(),
-                widget.Volume(),
+                widget.CPU(),
+                #widget.Battery(),
+                widget.Volume(update_interval=0.1, emoji=True),
                 widget.Clock(format='%Y-%m-%d %a %I:%M %p'),
                 #widget.QuickExit(),
             ],
