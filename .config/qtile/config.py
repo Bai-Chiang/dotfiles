@@ -104,6 +104,7 @@ for i in groups:
 
 layouts = [
     layout.MonadTall(
+        align=layout.MonadTall._right,
         border_focus='#006bb8',
         ratio=0.75,
         margin=5,

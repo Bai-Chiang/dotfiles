@@ -59,7 +59,20 @@ xterm -geometry 80x20+494-0 &
 
 setxkbmap -option "ctrl:nocaps,terminate:ctrl_alt_bksp"
 
+export DESKTOP_SESSION=kde
 exec qtile
 
 #export DESKTOP_SESSION=plasma
 #exec startplasma-x11
+
+# Here Xfce is kept as default
+#session=${1:-qtile}
+#
+#case $session in
+#    qtile           ) exec qtile;;
+#    kde             ) exec startplasma-x11;;
+#    # xfce|xfce4        ) exec startxfce4;;
+#    # No known session, try to run it as command
+#    *                 ) exec $1;;
+#esac
+
