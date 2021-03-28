@@ -2,7 +2,7 @@ set number
 syntax on
 set hls
 set history=1000 " the history stored
-
+set belloff=all " disable bell sound
 set nowrap "display long line as just one line
 
 " indent

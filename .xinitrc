@@ -57,15 +57,16 @@ xclock -geometry 50x50-1+1 &
 xterm -geometry 80x50+494+51 &
 xterm -geometry 80x20+494-0 &
 
-setxkbmap -option "ctrl:nocaps,terminate:ctrl_alt_bksp"
+#setxkbmap -option "ctrl:nocaps,terminate:ctrl_alt_bksp"
 
 export DESKTOP_SESSION=kde
-exec qtile
+exec i3
+#exec qtile
 
 #export DESKTOP_SESSION=plasma
 #exec startplasma-x11
 
-# Here Xfce is kept as default
+# Here qtile is kept as default
 #session=${1:-qtile}
 #
 #case $session in
@@ -75,4 +76,4 @@ exec qtile
 #    # No known session, try to run it as command
 #    *                 ) exec $1;;
 #esac
-
+#

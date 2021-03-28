@@ -26,3 +26,4 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
+export PATH="/home/bai-qiang/bin:$PATH"
