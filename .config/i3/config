@@ -173,7 +173,7 @@ bindsym $mod+Control+Right move workspace to output right
 
 # put workspace on specific screen
 workspace $ws0 output eDP-1-1
-workspace $ws1 output HDMI-0 eDP-1-1
+workspace $ws1 output DP-3 HDMI-0 eDP-1-1
 workspace $ws2 output HDMI-0 eDP-1-1
 workspace $ws3 output HDMI-0 eDP-1-1
 workspace $ws4 output HDMI-0 eDP-1-1
@@ -273,7 +273,7 @@ bar {
         font pango:DejaVu Sans Mono, FontAwesome 12
         tray_output none
         #status_command i3status
-        #status_command py3status -c ~/.config/py3status/nonprimary_config
+        status_command py3status -c ~/.config/py3status/config
 }
 
 
@@ -287,10 +287,10 @@ bar {
 # Applications settings
 
 # hide borders for firefox
-for_window [class="Firefox"] border none, move container to workspace $ws1
+for_window [class="Firefox"] border none
 
 # Assign to workspace
-#assign [class="Firefox"] → $ws1
+assign [class="Firefox"] → $ws1
 assign [class="okular"] → $ws5
 assign [class="Evince"] → $ws5
 assign [class="zoom"] → $ws6

@@ -36,19 +36,19 @@ battery all {
 }
 
 disk "/" {
-        format = "%avail"
+        format = "Disk %avail"
 }
 
 load {
-        format = "%1min"
+        format = "CPU %1min"
 }
 
 memory {
-        format = "%used | %available"
+        format = "RAM %used/%available"
         threshold_degraded = "1G"
         format_degraded = "MEMORY < %available"
 }
 
 tztime local {
-        format = "%Y-%m-%d %H:%M:%S"
+        format = "%Y-%m-%d %H:%M:%S %a"
 }
