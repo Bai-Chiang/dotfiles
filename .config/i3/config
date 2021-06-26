@@ -183,6 +183,18 @@ bindsym $mod+Shift+7 move container to workspace number $ws7
 bindsym $mod+Shift+8 move container to workspace number $ws8
 bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
+bindsym $mod+Shift+F1 move container to workspace number $ws11
+bindsym $mod+Shift+F2 move container to workspace number $ws12
+bindsym $mod+Shift+F3 move container to workspace number $ws13
+bindsym $mod+Shift+F4 move container to workspace number $ws14
+bindsym $mod+Shift+F5 move container to workspace number $ws15
+bindsym $mod+Shift+F6 move container to workspace number $ws16
+bindsym $mod+Shift+F7 move container to workspace number $ws17
+bindsym $mod+Shift+F8 move container to workspace number $ws18
+bindsym $mod+Shift+F9 move container to workspace number $ws19
+bindsym $mod+Shift+F10 move container to workspace number $ws20
+bindsym $mod+Shift+F11 move container to workspace number $ws21
+bindsym $mod+Shift+F12 move container to workspace number $ws22
 
 # move workspace between screens
 bindsym $mod+Control+h move workspace to output left
@@ -271,14 +283,14 @@ mode "$mode_screen" {
         bindsym l exec --no-startup-id ~/.screenlayout/laptop.sh; restart
         bindsym d exec --no-startup-id ~/.screenlayout/docked.sh; restart
         bindsym p exec --no-startup-id ~/.screenlayout/presentation.sh; restart
+        bindsym t exec --no-startup-id ~/.screenlayout/TV.sh; restart
 
         # back to normal
-        bindsym Return mode "default"
         bindsym Escape mode "default"
-        bindsym $mod+$alt+s mode "default"
+        bindsym $mod+Control+s mode "default"
 }
 
-bindsym $mod+$alt+s mode "$mode_screen"
+bindsym $mod+Control+s mode "$mode_screen"
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
@@ -315,16 +327,26 @@ for_window [class="Firefox"] border none
 
 # Assign to workspace
 assign [class="Firefox"] → $ws1
-assign [class="okular"] → $ws5
-assign [class="Evince"] → $ws5
+#assign [class="okular"] → $ws5
+#assign [class="Evince"] → $ws5
 assign [class="zoom"] → $ws6
 
 # launch applications
-bindsym $mod+Control+d exec dolphin
-bindsym $mod+Control+f exec firefox
-bindsym $mod+Control+s exec epectacle
-bindsym $mod+Control+p exec pavucontrol
-bindsym $mod+Control+z exec zoom
+bindsym $mod+e exec dolphin
+bindsym $mod+b exec firefox
+# Application launcher layout
+set $mode_app Applications: [p]avucontrol [s]pectacle [z]oom
+mode "$mode_app" {
+        bindsym s exec spectacle; mode "default"
+        bindsym p exec pavucontrol; mode "default"
+        bindsym z exec zoom; mode "default"
+
+        # back to normal
+        bindsym Escape mode "default"
+        bindsym $mod+a mode "default"
+}
+
+bindsym $mod+a mode "$mode_app"
 
 # default floating
 for_window [window_role="pop-up"] floating enable
