@@ -19,8 +19,8 @@ set backspace=indent,eol,start
 set nrformats= "treat all numbers as decimal, regardless of whether they are padded with zeros.
 set wildmenu " Tab complete EX commands
 
-" ruler follow PEP8
-set colorcolumn=73,80
+" 120 characters
+set colorcolumn=121
 highlight ColorColumn ctermbg=8
 
 " fold mode
