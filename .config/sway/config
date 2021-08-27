@@ -330,4 +330,11 @@ bar {
 # inactive window transparency
 exec python ~/.config/sway/inactive-windows-transparency.py
 
+#
+# colors
+#
+client.focused #ffffff #ffffff #ffffff #ffffff #ffffff69
+#client.focused_inactive #ffffff # #ffffff #ffffff #ffffff69
+#client.unfocused #ffffff #ffffff69 #ffffff #ffffff #ffffff69
+
 include /etc/sway/config.d/*
