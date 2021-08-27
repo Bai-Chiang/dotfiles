@@ -303,7 +303,7 @@ bindsym $mod+Control+s mode "$mode_screen"
 bar {
         output primary
         font pango:DejaVu Sans Mono, FontAwesome 12
-        tray_output none
+        tray_output primary
         status_command i3status
 }
 

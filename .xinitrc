@@ -60,11 +60,11 @@ xterm -geometry 80x20+494-0 &
 #setxkbmap -option "ctrl:nocaps,terminate:ctrl_alt_bksp"
 
 export DESKTOP_SESSION=kde
-exec i3
+#exec i3
 #exec qtile
 
-#export DESKTOP_SESSION=plasma
-#exec startplasma-x11
+export DESKTOP_SESSION=plasma
+exec startplasma-x11
 
 # Here qtile is kept as default
 #session=${1:-qtile}

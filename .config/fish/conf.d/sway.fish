@@ -3,6 +3,7 @@ set TTY1 (tty)
 if test -z "$DISPLAY"; and test $TTY1 = "/dev/tty1"
   # let kde application like dolphin show correct theme
   set -x DESKTOP_SESSION kde
+  set -x GDK_BACKEND wayland
   exec sway
 end
 
