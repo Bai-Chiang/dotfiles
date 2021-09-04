@@ -33,21 +33,57 @@ set $ws8 "8"
 set $ws9 "9"
 set $ws10 "10"
 
+# Nord colors
+# Polar Night
+set $nord0 #2e3440
+set $nord1 #3b4252
+set $nord2 #434c5e
+set $nord3 #4c566a
+# Snow Storm
+set $nord4 #d8dee9
+set $nord5 #e5e9f0
+set $nord6 #eceff4
+# Frost
+set $nord7 #8fbcbb
+set $nord8 #88c0d0
+set $nord9 #81a1c1
+set $nord10 #5e81ac
+# Aurora
+set $nord11 #bf616a
+set $nord12 #d08770
+set $nord13 #ebcb8b
+set $nord14 #a3be8c
+set $nord15 #b48ead
+
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
 #output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
-output * bg ~/Wallpapers/001.jpg fill
+#output * bg ~/Wallpapers/002.jpg fill
+output * bg /usr/share/wallpapers/Next/contents/images/base_size.png fill
 #
 # Example configuration:
 #
 #   output HDMI-A-1 resolution 1920x1080 position 1920,0
 #
 # You can get the names of your outputs by running: swaymsg -t get_outputs
-output eDP-1 mode 1920x1080@60Hz scale 1 position 0 0
-# docked monitors
-output "Goldstar Company Ltd LG HDR 4K 0x0000C413" mode 3840x2160@60Hz scale 1.5 position 1920 0
-output "ViewSonic Corporation VX2363 Series U0G155000519" mode 1920x1080@60Hz scale 1 transform 90 position 5760 0
+# known monitors
+output eDP-1 mode 1920x1080 scale 1 position 0 0
+output "Goldstar Company Ltd LG HDR 4K 0x0000C413" mode 3840x2160@60Hz scale 1.5
+output "ViewSonic Corporation VX2363 Series U0G155000519" mode 1920x1080@60Hz scale 1 transform 90 
+set $mode_screen Screens layout: [L]aptop [O]ffice [H]ome [P]resentation [T]V
+mode "$mode_screen" {
+    bindsym l output eDP-1 mode 1920x1080 scale 1 position 0 0, output HDMI-A-1 disable, output DP-2 disable, mode "default"
+    bindsym o output eDP-1 mode 1920x1080 scale 1 position 1080 840, output "ViewSonic Corporation VX2363 Series U0G155000519" enable mode 1920x1080@60Hz scale 1 transform 90 position 0 0, mode "default"
+    bindsym h output eDP-1 mode 1920x1080 scale 1 position 3840 1080, output "Goldstar Company Ltd LG HDR 4K 0x0000C413" enable mode 3840x2160@60Hz scale 1.5 transform 0 position 0 0, mode "default"
+    bindsym p output eDP-1 mode 1920x1080 scale 1 position 0 0, output HDMI-A-1 enable position 1920 0, output DP-2 enable, mode "default"
+    bindsym t output eDP-1 disable, output HDMI-A-1 enable position 0 0, output DP-2 disable, mode "default"
+
+    # Return to default mode
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+bindsym $mod+Control+s mode "$mode_screen"
 
 ### Idle configuration
 #
@@ -264,7 +300,7 @@ input "type:touchpad" {
     bindsym $mod+Control+b exec firefox
 
     # Application launcher layout
-    set $mode_app Applications: gs[c]an2pdf system-config-[p]rinter [s]pectacle pa[v]ucontrol [x]ournalpp [z]oom
+    set $mode_app Applications: gs[c]an2pdf system-config-[p]rinter [s]pectacle pa[v]ucontrol [V]irt-manager [x]ournalpp [z]oom
     mode "$mode_app" {
             bindsym c exec gscan2pdf; mode "default"
             bindsym p exec system-config-printer; mode "default"
@@ -272,6 +308,7 @@ input "type:touchpad" {
             bindsym v exec pavucontrol; mode "default"
             bindsym x exec xournalpp; mode "default"
             bindsym z exec zoom; mode "default"
+            bindsym Shift+v exec virt-manager; mode "default"
 
             # back to normal
             bindsym Escape mode "default"
@@ -313,19 +350,23 @@ for_window [title="(?i)setting*"] floating enable
 # Status Bar:
 #
 # Read `man 5 sway-bar` for more information about this section.
+#bar {
+#    position top
+#
+#    # When the status_command prints a new line to stdout, swaybar updates.
+#    # The default just shows the current date and time.
+#    status_command while date +'%Y-%m-%d %l:%M:%S %p'; do sleep 1; done
+#
+#    colors {
+#        statusline #ffffff
+#        background $nord0
+#        inactive_workspace #323232 #323232 #5c5c5c
+#    }
+#}
 bar {
-    position top
-
-    # When the status_command prints a new line to stdout, swaybar updates.
-    # The default just shows the current date and time.
-    status_command while date +'%Y-%m-%d %l:%M:%S %p'; do sleep 1; done
-
-    colors {
-        statusline #ffffff
-        background #323232
-        inactive_workspace #32323200 #32323200 #5c5c5c
-    }
+    swaybar_command waybar
 }
+
 
 # inactive window transparency
 exec python ~/.config/sway/inactive-windows-transparency.py
@@ -333,8 +374,9 @@ exec python ~/.config/sway/inactive-windows-transparency.py
 #
 # colors
 #
-client.focused #ffffff #ffffff #ffffff #ffffff #ffffff69
-#client.focused_inactive #ffffff # #ffffff #ffffff #ffffff69
-#client.unfocused #ffffff #ffffff69 #ffffff #ffffff #ffffff69
+client.focused $nord4 $nord4 $nord0 $nord10 $nord4
+client.focused_inactive $nord4 $nord4 $nord0 $nord10 $nord4
+client.unfocused $nord0 $nord0 $nord4 $nord10 $nord0
+client.urgent $nord11 $nord11 $nord0 $nord10 $nord11
 
 include /etc/sway/config.d/*
