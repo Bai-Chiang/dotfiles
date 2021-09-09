@@ -23,15 +23,15 @@ set $menu dmenu_path | dmenu | xargs swaymsg exec --
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
 set $ws1 "1:"
-set $ws2 "2:"
-set $ws3 "3:"
+set $ws2 "2:"
+set $ws3 "3:"
 set $ws4 "4:"
-set $ws5 "5:"
-set $ws6 "6:"
+set $ws5 "5:"
+set $ws6 "6:"
 set $ws7 "7:"
-set $ws8 "8"
-set $ws9 "9"
-set $ws10 "10"
+set $ws8 "8:"
+set $ws9 "9:"
+set $ws10 "10:"
 
 # Nord colors
 # Polar Night
@@ -71,7 +71,7 @@ output * bg /usr/share/wallpapers/Next/contents/images/base_size.png fill
 output eDP-1 mode 1920x1080 scale 1 position 0 0
 output "Goldstar Company Ltd LG HDR 4K 0x0000C413" mode 3840x2160@60Hz scale 1.5
 output "ViewSonic Corporation VX2363 Series U0G155000519" mode 1920x1080@60Hz scale 1 transform 90 
-set $mode_screen Screens layout: [L]aptop [O]ffice [H]ome [P]resentation [T]V
+set $mode_screen Screens layout: [L]aptop  [O]ffice  [H]ome  [P]resentation  [T]V
 mode "$mode_screen" {
     bindsym l output eDP-1 mode 1920x1080 scale 1 position 0 0, output HDMI-A-1 disable, output DP-2 disable, mode "default"
     bindsym o output eDP-1 mode 1920x1080 scale 1 position 1080 840, output "ViewSonic Corporation VX2363 Series U0G155000519" enable mode 1920x1080@60Hz scale 1 transform 90 position 0 0, mode "default"
@@ -300,7 +300,7 @@ input "type:touchpad" {
     bindsym $mod+Control+b exec firefox
 
     # Application launcher layout
-    set $mode_app Applications: gs[c]an2pdf system-config-[p]rinter [s]pectacle pa[v]ucontrol [V]irt-manager [x]ournalpp [z]oom
+    set $mode_app Applications: gs[c]an2pdf  system-config-[p]rinter  [s]pectacle  pa[v]ucontrol  [V]irt-manager  [x]ournalpp  [z]oom
     mode "$mode_app" {
             bindsym c exec gscan2pdf; mode "default"
             bindsym p exec system-config-printer; mode "default"
