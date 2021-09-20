@@ -24,8 +24,8 @@
         //"backlight",
         //"keyboard-state",
         //"sway/language",
-        //"battery",
-        "battery#bat2",
+        "battery",
+        //"battery#bat2",
         "clock",
         "tray"
     ],
@@ -135,9 +135,9 @@
         // "format-full": "",
         "format-icons": ["", "", "", "", ""]
     },
-    "battery#bat2": {
-        "bat": "BAT2"
-    },
+    //"battery#bat2": {
+    //    "bat": "BAT2"
+    //},
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
         "format-wifi": "{essid} ({signalStrength}%) ",
@@ -150,10 +150,10 @@
         // "scroll-step": 1, // %, can be a float
         "format": "{volume}% {icon} {format_source}",
         "format-bluetooth": "{volume}% {icon} {format_source}",
-        "format-bluetooth-muted": " {icon} {format_source}",
-        "format-muted": " {format_source}",
+        "format-bluetooth-muted": "    {icon} {format_source}",
+        "format-muted": "    {format_source}",
         "format-source": "{volume}% ",
-        "format-source-muted": "",
+        "format-source-muted": "   ",
         "format-icons": {
             "headphone": "",
             "hands-free": "",
@@ -163,7 +163,9 @@
             "car": "",
             "default": ["", "", ""]
         },
-        "on-click": "pavucontrol"
+        "on_clic": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+        "on-click-right": "pavucontrol",
+        "on_clic-middle": "pactl set-source-mute @DEFAULT_SOURCE@ toggle"
     },
     //"custom/media": {
     //    "format": "{icon} {}",

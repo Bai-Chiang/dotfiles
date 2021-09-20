@@ -144,13 +144,11 @@ window#waybar.chromium {
 */
 
 #battery {
-    background-color: #ffffff;
-    color: #000000;
+    color: @nord4;
 }
 
 #battery.charging, #battery.plugged {
-    color: #ffffff;
-    background-color: #26A65B;
+    color: @nord4;
 }
 
 @keyframes blink {
@@ -161,8 +159,8 @@ window#waybar.chromium {
 }
 
 #battery.critical:not(.charging) {
-    background-color: #f53c3c;
-    color: #ffffff;
+    background-color: @nord4;
+    color: @nord11;
     animation-name: blink;
     animation-duration: 0.5s;
     animation-timing-function: linear;
@@ -205,12 +203,12 @@ label:focus {
 
 #pulseaudio {
     /*background-color: #f1c40f;*/
-    color: #d8dee9;
+    color: @nord4;
 }
 
 #pulseaudio.muted {
     /*background-color: #90b1b1;*/
-    color: #2a5c45;
+    color: @nord10;
 }
 
 #custom-media {
