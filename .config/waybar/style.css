@@ -239,9 +239,11 @@ label:focus {
     background-color: @nord11;
 }
 
+/*
 #tray {
     background-color: #2980b9;
 }
+*/
 
 #tray > .passive {
     -gtk-icon-effect: dim;
@@ -249,7 +251,6 @@ label:focus {
 
 #tray > .needs-attention {
     -gtk-icon-effect: highlight;
-    background-color: #eb4d4b;
 }
 
 #idle_inhibitor {

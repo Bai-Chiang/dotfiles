@@ -12,7 +12,10 @@
         "sway/mode"
         //"custom/media"
     ],
-    //"modules-center": [ "sway/window" ],
+    "modules-center": [
+        //"sway/window",
+        "tray"
+    ],
     "modules-right": [
         //"mpd",
         //"cpu",
@@ -27,8 +30,7 @@
         "idle_inhibitor",
         "keyboard-state",
         "battery",
-        "clock",
-        "tray"
+        "clock"
     ],
 
     // Modules configuration
@@ -107,7 +109,7 @@
         "tooltip": false
     },
     "memory": {
-        "format": "  {avail:0.2f}GiB",
+        "format": "  {avail:0.2f}GiB  available",
         "states": {
             "warning": 70,
             "critical": 90
