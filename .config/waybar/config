@@ -151,7 +151,7 @@
         "format-wifi": "    {essid}",
         "tooltip-format-wifi": "   {essid}   ({signalStrength}% {frequency}MHz) {ipaddr}/{cidr}  {bandwidthUpBits} {bandwidthDownBits}",
         "format-disconnected": "  Disconnected",
-        "format-alt": "  {ifname}"
+        //"format-alt": "  {ifname}"
     },
     "network#eth": {
         "interface": "en*",
@@ -160,7 +160,7 @@
         "tooltip-format-ethernet": " {ifname} {ipaddr}/{cidr} {bandwidthUpBits} {bandwidthDownBits}",
         "format-linked": "  (No IP)",
         "format-disconnected": "   Disconnected",
-        "format-alt": "{ifname}"
+        //"format-alt": "{ifname}"
     },
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
