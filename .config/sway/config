@@ -374,9 +374,9 @@ exec python ~/.config/sway/inactive-windows-transparency.py
 #
 # colors
 #
-client.focused $nord4 $nord4 $nord0 $nord10 $nord4
-client.focused_inactive $nord4 $nord4 $nord0 $nord10 $nord4
+client.focused $nord9 $nord9 $nord0 $nord10 $nord9
+client.focused_inactive $nord9 $nord9 $nord0 $nord10 $nord9
 client.unfocused $nord0 $nord0 $nord4 $nord10 $nord0
-client.urgent $nord11 $nord11 $nord0 $nord10 $nord11
+client.urgent $nord4 $nord4 $nord0 $nord10 $nord4
 
 include /etc/sway/config.d/*
