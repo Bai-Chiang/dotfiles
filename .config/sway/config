@@ -29,8 +29,8 @@ set $ws4 "4:"
 set $ws5 "5:"
 set $ws6 "6:"
 set $ws7 "7:"
-set $ws8 "8:"
-set $ws9 "9:"
+set $ws8 "8:"
+set $ws9 "9:"
 set $ws10 "10:"
 
 # Nord colors
@@ -307,7 +307,7 @@ input "type:touchpad" {
             bindsym s exec spectacle; mode "default"
             bindsym v exec pavucontrol; mode "default"
             bindsym x exec xournalpp; mode "default"
-            bindsym z exec zoom; mode "default"
+            bindsym z exec QT_QPA_PLATFORM= zoom; mode "default"
             bindsym Shift+v exec virt-manager; mode "default"
 
             # back to normal
