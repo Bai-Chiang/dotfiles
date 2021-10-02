@@ -300,21 +300,34 @@ input "type:touchpad" {
     bindsym $mod+Control+b exec firefox
 
     # Application launcher layout
-    set $mode_app Applications: gs[c]an2pdf  system-config-[p]rinter  [s]pectacle  pa[v]ucontrol  [V]irt-manager  [x]ournalpp  [z]oom
+    set $mode_app Applications: gs[c]an2pdf [s]pectacle  [v]irt-manager  [x]ournalpp  [z]oom
     mode "$mode_app" {
             bindsym c exec gscan2pdf; mode "default"
-            bindsym p exec system-config-printer; mode "default"
             bindsym s exec spectacle; mode "default"
-            bindsym v exec pavucontrol; mode "default"
+            #bindsym v exec pavucontrol; mode "default"
+            bindsym v exec virt-manager; mode "default"
             bindsym x exec xournalpp; mode "default"
             bindsym z exec QT_QPA_PLATFORM= zoom; mode "default"
-            bindsym Shift+v exec virt-manager; mode "default"
 
             # back to normal
             bindsym Escape mode "default"
             bindsym $mod+a mode "default"
     }
     bindsym $mod+Control+a mode "$mode_app"
+
+#
+# Configs key bindings:
+#
+    set $mode_config configs: system-config-[p]rinter pa[v]ucontrol
+    mode "$mode_config" {
+            bindsym p exec system-config-printer; mode "default"
+            bindsym v exec pavucontrol; mode "default"
+
+            # back to normal
+            bindsym Escape mode "default"
+            bindsym $mod+c mode "default"
+    }
+    bindsym $mod+Control+c mode "$mode_config"
 
 #
 # Resizing containers:
