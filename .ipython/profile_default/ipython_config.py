@@ -41,6 +41,9 @@ c.InteractiveShellApp.exec_lines = [
 
     'from pathlib import Path',
     'import hashlib',
+
+    'from numpy.random import default_rng',
+    'rng = default_rng()',
     ]
 
 ## A list of dotted module names of IPython extensions to load.
