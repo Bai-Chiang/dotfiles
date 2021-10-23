@@ -306,7 +306,7 @@ input "type:touchpad" {
             #bindsym v exec pavucontrol; mode "default"
             bindsym v exec virt-manager; mode "default"
             bindsym x exec xournalpp; mode "default"
-            bindsym z exec QT_QPA_PLATFORM= zoom; mode "default"
+            bindsym z exec QT_QPA_PLATFORM=xcb zoom; mode "default"
 
             # back to normal
             bindsym Escape mode "default"
