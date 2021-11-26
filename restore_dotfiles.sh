@@ -1,6 +1,6 @@
 #!/usr/bin/bash
 
-git clone --bare git@github.com:Bai-Chiang/dotfiles.git $HOME/.dotfiles
+git clone --bare https://github.com/Bai-Chiang/dotfiles.git $HOME/.dotfiles
 
 function dotfiles {
    /usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME $@
