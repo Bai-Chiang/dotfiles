@@ -1,0 +1,11 @@
+[Unit]
+Description=Update flatpak
+StartLimitIntervalSec=3h
+StartLimitBurst=5
+OnFailure=failure-notification@%n
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/flatpak update --assumeyes
+Restart=on-failure
+RestartSec=30min

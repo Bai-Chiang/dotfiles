@@ -295,19 +295,23 @@ input "type:touchpad" {
 #
 # Application key bindings:
 #
-    bindsym $mod+Control+f exec ranger
     bindsym $mod+Control+b exec flatpak run io.gitlab.librewolf-community
+    bindsym $mod+Control+f exec ranger
+    bindsym $mod+Control+v exec virt-manager
 
     # Application launcher layout
     set $mode_app Applications: [b]-firefox [s]pectacle  [v]irt-manager  [x]ournalpp  [z]oom
     mode "$mode_app" {
             bindsym b exec flatpak run org.mozilla.firefox; mode "default"
+            bindsym f exec flatpak run org.kde.dolphin; mode "default"
             #bindsym c exec gscan2pdf; mode "default"
             #bindsym s exec spectacle; mode "default"
             #bindsym v exec pavucontrol; mode "default"
+            bindsym s exec flatpak run com.slack.Slack; mode "default"
+            bindsym Shift+s exec flatpak run com.valvesoftware.Steam; mode "default"
             bindsym v exec virt-manager; mode "default"
             #bindsym x exec xournalpp; mode "default"
-            #bindsym z exec QT_QPA_PLATFORM=xcb zoom; mode "default"
+            bindsym z exec flatpak run us.zoom.Zoom; mode "default"
 
             # back to normal
             bindsym Escape mode "default"
@@ -318,8 +322,9 @@ input "type:touchpad" {
 #
 # Configs key bindings:
 #
-    set $mode_config configs: system-config-[p]rinter pa[v]ucontrol
+    set $mode_config configs: [f]latseal system-config-[p]rinter pa[v]ucontrol
     mode "$mode_config" {
+            bindsym f exec flatpak run com.github.tchx84.Flatseal; mode "default"
             bindsym p exec system-config-printer; mode "default"
             bindsym v exec pavucontrol; mode "default"
 
