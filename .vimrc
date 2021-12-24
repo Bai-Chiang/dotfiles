@@ -25,7 +25,7 @@ highlight ColorColumn ctermbg=8
 
 " fold mode
 " set foldenable
-set foldmethod=indent
+" set foldmethod=indent
 
 " set spell " highlight miss-spelled words
 
