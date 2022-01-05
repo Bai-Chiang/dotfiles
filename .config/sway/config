@@ -300,17 +300,17 @@ input "type:touchpad" {
     bindsym $mod+Control+v exec virt-manager
 
     # Application launcher layout
-    set $mode_app Applications: [b]-firefox [s]pectacle  [v]irt-manager  [x]ournalpp  [z]oom
+    set $mode_app Applications: [b] firefox [f] dolphin [k]keepassxc [o]kular [r]pi-imager [s]lack [S]team  [v]irt-manager  [x]ournalpp  [z]oom
     mode "$mode_app" {
             bindsym b exec flatpak run org.mozilla.firefox; mode "default"
+            bindsym k exec keepassxc; mode "default"
             bindsym f exec flatpak run org.kde.dolphin; mode "default"
-            #bindsym c exec gscan2pdf; mode "default"
-            #bindsym s exec spectacle; mode "default"
-            #bindsym v exec pavucontrol; mode "default"
+            bindsym o exec flatpak run org.kde.okular; mode "default"
+            bindsym r exec flatpak run org.raspberrypi.rpi-imager; mode "default"
             bindsym s exec flatpak run com.slack.Slack; mode "default"
             bindsym Shift+s exec flatpak run com.valvesoftware.Steam; mode "default"
             bindsym v exec virt-manager; mode "default"
-            #bindsym x exec xournalpp; mode "default"
+            bindsym x exec xournalpp; mode "default"
             bindsym z exec flatpak run us.zoom.Zoom; mode "default"
 
             # back to normal
@@ -322,10 +322,12 @@ input "type:touchpad" {
 #
 # Configs key bindings:
 #
-    set $mode_config configs: [f]latseal system-config-[p]rinter pa[v]ucontrol
+    set $mode_config configs: [f]latseal system-config-[p]rinter [s]pectacle g[S]can2pdf pa[v]ucontrol
     mode "$mode_config" {
             bindsym f exec flatpak run com.github.tchx84.Flatseal; mode "default"
             bindsym p exec system-config-printer; mode "default"
+            bindsym s exec spectacle; mode "default"
+            bindsym Shift+s exec gscan2pdf; mode "default"
             bindsym v exec pavucontrol; mode "default"
 
             # back to normal
@@ -333,6 +335,7 @@ input "type:touchpad" {
             bindsym $mod+Control+c mode "default"
     }
     bindsym $mod+Control+c mode "$mode_config"
+
 
 #
 # Resizing containers:
@@ -388,6 +391,9 @@ bar {
 
 # inactive window transparency
 exec python ~/.config/sway/inactive-windows-transparency.py
+
+# autostart graphical authentication
+exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 
 #
 # colors
