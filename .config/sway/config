@@ -88,11 +88,16 @@ bindsym $mod+Control+s mode "$mode_screen"
 #
 # Example configuration:
 #
-# exec swayidle -w \
-#          timeout 300 'swaylock -f -c 000000' \
-#          timeout 600 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
-#          before-sleep 'swaylock -f -c 000000'
-#
+# lock screen after 300 sec/ 5 min
+# 5 sec after screenlock turn off screen
+exec swayidle -w \
+        before-sleep 'playerctl pause' \
+        before-sleep 'swaylock -f -c 2e3440' \
+        timeout 300 'swaylock -f -c 2e3440' \
+        timeout 305 'swaymsg "output * dpms off"' \
+        resume 'swaymsg "output * dpms on"'
+
+
 # This will lock your screen after 300 seconds of inactivity, then turn off
 # your displays after another 300 seconds, and turn your screens back on when
 # resumed. It will also lock your screen before your computer goes to sleep.
@@ -158,17 +163,6 @@ input "type:touchpad" {
     bindsym XF86AudioNext exec playerctl next
     bindsym XF86AudioPrev exec playerctl previous
     bindsym XF86Search exec bemenu-run
-
-    # Idle management
-    # lock screen after 300 sec/ 5 min
-    # 5 sec after screenlock turn off screen
-    exec swayidle -w \
-        before-sleep 'playerctl pause' \
-        before-sleep 'swaylock' \
-        timeout 300 'swaylock' \
-        timeout 305 'swaymsg "output * dpms off"' \
-        resume 'swaymsg "output * dpms on"'
-
 
 #
 # Moving around:
