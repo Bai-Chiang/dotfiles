@@ -18,7 +18,13 @@ source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 # dotfiles backup
 alias dotfiles="git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
 
-#export PATH="$PATH:/home/bai-chiang/miniconda/bin"
+
+alias butane='podman run --rm --interactive       \
+              --security-opt label=disable        \
+              --volume ${PWD}:/pwd --workdir /pwd \
+              quay.io/coreos/butane:release'
+
+
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 __conda_setup="$('/home/bai-chiang/miniconda/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
