@@ -111,6 +111,7 @@
         "tooltip": false
     },
     "memory": {
+        "interval": 5,
         "format": "  {avail:0.2f}GiB  available",
         "states": {
             "warning": 70,
