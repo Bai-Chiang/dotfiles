@@ -18,6 +18,9 @@ source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 # dotfiles backup
 alias dotfiles="git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
 
+# Mute PC speaker in less
+alias less='less -Q'
+alias man='man -P "less -Q"'
 
 alias butane='podman run --rm --interactive       \
               --security-opt label=disable        \

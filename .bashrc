@@ -11,4 +11,8 @@ PS1='[\u@\h \W]\$ '
 # dotfiles
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
+# Mute PC speaker in less
+alias less='less -Q'
+alias man='man -P "less -Q"'
+
 export PATH="/home/bai-qiang/bin:$PATH"
