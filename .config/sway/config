@@ -395,7 +395,7 @@ bar {
 
 
 # inactive window transparency
-exec python ~/.config/sway/inactive-windows-transparency.py
+exec python ~/.config/sway/inactive-windows-transparency.py --opacity 0.9
 
 # autostart graphical authentication
 exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
@@ -403,9 +403,10 @@ exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 #
 # colors
 #
-client.focused $nord9 $nord9 $nord0 $nord10 $nord9
-client.focused_inactive $nord9 $nord9 $nord0 $nord10 $nord9
-client.unfocused $nord0 $nord0 $nord4 $nord10 $nord0
-client.urgent $nord4 $nord4 $nord0 $nord10 $nord4
+# class                  border  background  text    indicator  child_border
+client.focused           $nord8  $nord8      $nord0  $nord7    $nord8
+client.focused_inactive  $nord8  $nord8      $nord0  $nord7    $nord8
+client.unfocused         $nord1  $nord1      $nord4  $nord7    $nord1
+client.urgent            $nord4  $nord4      $nord0  $nord7    $nord4
 
 include /etc/sway/config.d/*
