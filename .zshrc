@@ -21,6 +21,7 @@ alias dotfiles="git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
 # Mute PC speaker in less
 alias less='less -Q'
 alias man='man -P "less -Q"'
+alias du='du -h --max-depth=1'
 
 alias butane='podman run --rm --interactive       \
               --security-opt label=disable        \

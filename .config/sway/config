@@ -237,7 +237,7 @@ input "type:touchpad" {
 # Layout stuff:
 #
     # You can "split" the current object of your focus with
-    # $mod+b or $mod+v, for horizontal and vertical splits
+    # $mod+g or $mod+v, for horizontal and vertical splits
     # respectively.
     bindsym $mod+g splith
     bindsym $mod+v splitv
@@ -257,10 +257,10 @@ input "type:touchpad" {
     bindsym $mod+Shift+z focus mode_toggle
 
     # Move focus to the parent container
-    bindsym $mod+a focus parent
+    bindsym $mod+q focus parent
 
     # focus the child container
-    bindsym $mod+c focus child
+    bindsym $mod+a focus child
 
     # Default border style for new windows
     # Setting border style to pixel eliminates title bars
