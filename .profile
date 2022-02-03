@@ -3,11 +3,8 @@ if [ -d "$HOME/bin" ] ; then
     PATH="$HOME/bin:$PATH"
 fi
 
-# If running from tty1 start Sway
+# Automatically login on tty1
 if [ -z $DISPLAY ] && [ "$(tty)" = "/dev/tty1" ]; then
-  export GTK_THEME=Adwaita:dark
-  export QT_QPA_PLATFORMTHEME=kde
-  #export WLR_NO_HARDWARE_CURSORS=1
   exec sway
-  # --unsupported-gpu
 fi
+

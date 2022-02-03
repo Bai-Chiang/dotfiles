@@ -15,4 +15,3 @@ alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias less='less -Q'
 alias man='man -P "less -Q"'
 
-export PATH="/home/bai-qiang/bin:$PATH"
