@@ -88,13 +88,13 @@ bindsym $mod+Control+s mode "$mode_screen"
 #
 # Example configuration:
 #
-# lock screen after 300 sec/ 5 min
-# 5 sec after screenlock turn off screen
+# turn off screen after 300 sec/ 5 min
+# 5 sec later screen lock
 exec swayidle -w \
         before-sleep 'playerctl pause' \
         before-sleep 'swaylock -f -c 2e3440' \
-        timeout 300 'swaylock -f -c 2e3440' \
-        timeout 305 'swaymsg "output * dpms off"' \
+        timeout 305 'swaylock -f -c 2e3440' \
+        timeout 300 'swaymsg "output * dpms off"' \
         resume 'swaymsg "output * dpms on"'
 
 

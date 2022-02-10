@@ -15,14 +15,19 @@ compinit
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
-# dotfiles backup
-alias dotfiles="git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
-
-# Mute PC speaker in less
-alias less='less -Q'
+# alias
+alias dotfiles="git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"    # dotfiles backup
+alias less='less -Q'    # Mute PC speaker in less
 alias man='man -P "less -Q"'
-alias du='du -h --max-depth=1'
-
+alias dh='du -h --max-depth=1'
+alias mv='mv -i'
+alias cp='cp -i'
+alias rm='rm -i'
+alias ln='ln -i'
+alias mkdir='mkdir -p'
+alias pacsyu='sudo pacman -Syu'
+alias systemctl='sudo systemctl'
+alias ssh='TERM=xterm-256color ssh'
 alias butane='podman run --rm --interactive       \
               --security-opt label=disable        \
               --volume ${PWD}:/pwd --workdir /pwd \
