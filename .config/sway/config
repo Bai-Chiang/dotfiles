@@ -327,9 +327,10 @@ input "type:touchpad" {
 #
 # Tools key bindings:
 #
-    set $mode_config configs: [f]latseal system-config-[p]rinter flame[s]hot g[S]can2pdf pa[v]ucontrol
+    set $mode_config configs: [f]latseal [n]m-connection-editor system-config-[p]rinter flame[s]hot g[S]can2pdf pa[v]ucontrol
     mode "$mode_config" {
             bindsym f exec flatpak run com.github.tchx84.Flatseal; mode "default"
+            bindsym n exec nm-connection-editor; mode "default"
             bindsym p exec system-config-printer; mode "default"
             bindsym s exec flatpak run org.flameshot.Flameshot; mode "default"
             bindsym Shift+s exec gscan2pdf; mode "default"
@@ -339,7 +340,7 @@ input "type:touchpad" {
             bindsym Escape mode "default"
             bindsym $mod+Control+c mode "default"
     }
-    bindsym $mod+Control+t mode "$mode_config"
+    bindsym $mod+Control+c mode "$mode_config"
 
 
 #

@@ -111,7 +111,7 @@
         "tooltip": false
     },
     "memory": {
-        "interval": 5,
+        "interval": 1,
         "format": "  {avail:0.2f}GiB  available",
         "states": {
             "warning": 70,
@@ -150,7 +150,7 @@
     //},
     "network#wifi": {
         "interface": "wl*",
-        "interval": 60,
+        "interval": 1,
         "format-wifi": "    {essid}",
         "tooltip-format-wifi": "   {essid}   ({signalStrength}% {frequency}MHz) {ipaddr}/{cidr}  {bandwidthUpBits} {bandwidthDownBits}",
         "format-disconnected": "  Disconnected",
@@ -158,7 +158,7 @@
     },
     "network#eth": {
         "interface": "en*",
-        "interval": 60,
+        "interval": 1,
         "format-ethernet": "   Connected",
         "tooltip-format-ethernet": " {ifname} {ipaddr}/{cidr} {bandwidthUpBits} {bandwidthDownBits}",
         "format-linked": "  (No IP)",

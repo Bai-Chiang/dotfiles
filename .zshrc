@@ -28,6 +28,7 @@ alias mkdir='mkdir -p'
 alias pacsyu='sudo pacman -Syu'
 alias systemctl='sudo systemctl'
 alias ssh='TERM=xterm-256color ssh'
+alias dd='dd bs=8M conv=noerror,sync status=progress'
 alias butane='podman run --rm --interactive       \
               --security-opt label=disable        \
               --volume ${PWD}:/pwd --workdir /pwd \
