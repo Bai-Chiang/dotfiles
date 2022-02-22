@@ -139,7 +139,7 @@ shadeSortColumn=true
 widgetStyle=Breeze
 
 [KDE]
-ColorScheme=BreezeLight
+ColorScheme=BreezeDark
 LookAndFeelPackage=org.kde.breezedark.desktop
 contrast=4
 
