@@ -301,16 +301,17 @@ input "type:touchpad" {
 #
 # Application key bindings:
 #
-    bindsym $mod+Control+b exec flatpak run io.gitlab.librewolf-community
+    #bindsym $mod+Control+b exec flatpak run io.gitlab.librewolf-community
     #bindsym $mod+Control+b exec flatpak run org.mozilla.firefox
-    #bindsym $mod+Control+b exec librewolf
-    bindsym $mod+Control+f exec ranger
+    bindsym $mod+Control+b exec librewolf
+    #bindsym $mod+Control+f exec ranger
+    bindsym $mod+Control+f exec flatpak run org.kde.dolphin
     bindsym $mod+Control+v exec virt-manager
 
     # Application launcher layout
-    set $mode_app Applications: [b] firefox [f] dolphin [k]keepassxc [o]kular qbit[t]orrent [v]irt-manager [x]ournalpp [y]acreader
+    set $mode_app Applications: [b] libwolf(flatpak) [f] dolphin [k]keepassxc [o]kular qbit[t]orrent [v]irt-manager [x]ournalpp [y]acreader
     mode "$mode_app" {
-            bindsym b exec firefox; mode "default"
+            bindsym b exec flatpak run io.gitlab.librewolf-community; mode "default"
             bindsym k exec keepassxc; mode "default"
             bindsym f exec flatpak run org.kde.dolphin; mode "default"
             bindsym o exec flatpak run org.kde.okular; mode "default"
