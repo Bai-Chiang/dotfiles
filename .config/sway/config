@@ -70,13 +70,14 @@ output * bg ~/Wallpapers/Altai/contents/images/base_size.png fill
 # known monitors
 output eDP-1 mode 1920x1080 scale 1 position 0 0
 output "ViewSonic Corporation VX2363 Series U0G155000519" mode 1920x1080@60Hz scale 1 transform 270
-set $mode_screen Screens layout: [L]aptop  [O]ffice  [H]ome  [P]resentation [T]V
+set $mode_screen Screens layout: [l]aptop e[x]ternal [o]ffice  [h]ome
 mode "$mode_screen" {
     bindsym l output eDP-1 mode 1920x1080 scale 1 position 0 0, output HDMI-A-1 disable, output DP-2 disable, mode "default"
+    bindsym x output eDP-1 disable, output HDMI-A-1 enable position 0 0, output DP-2 disable, mode "default"
+    bindsym Shift+x output eDP-1 disable, output HDMI-A-1 mode 1920x1080 position 0 0, output DP-2 disable, mode "default"
     bindsym o output eDP-1 mode 1920x1080 scale 1 position 1080 840, output "ViewSonic Corporation VX2363 Series U0G155000519" enable mode 1920x1080@60Hz scale 1 transform 270 position 0 0, mode "default"
     bindsym h output eDP-1 mode 1920x1080 scale 1 position 2560 360, output "Goldstar Company Ltd LG HDR 4K 0x0000C413" enable mode 3840x2160@60Hz scale 1.5 transform 0 position 0 0, mode "default"
-    bindsym p output eDP-1 mode 1920x1080 scale 1 position 0 1080, output HDMI-A-1 mode 1920x1080 scale 1 position 0 0, output DP-2 enable, mode "default"
-    bindsym t output eDP-1 disable, output HDMI-A-1 enable position 0 0, output DP-2 disable, mode "default"
+    #bindsym p output eDP-1 mode 1920x1080 scale 1 position 0 1080, output HDMI-A-1 mode 1920x1080 scale 1 position 0 0, output DP-2 enable, mode "default"
 
     # Return to default mode
     bindsym Return mode "default"
@@ -307,7 +308,7 @@ input "type:touchpad" {
     bindsym $mod+Control+v exec virt-manager
 
     # Application launcher layout
-    set $mode_app Applications: [b] firefox [f] dolphin [k]keepassxc [o]kular qbit[t]orrent [v]irt-manager [x]ournalpp
+    set $mode_app Applications: [b] firefox [f] dolphin [k]keepassxc [o]kular qbit[t]orrent [v]irt-manager [x]ournalpp [y]acreader
     mode "$mode_app" {
             bindsym b exec firefox; mode "default"
             bindsym k exec keepassxc; mode "default"
@@ -316,6 +317,7 @@ input "type:touchpad" {
             bindsym t exec flatpak run org.qbittorrent.qBittorrent; mode "default"
             bindsym v exec virt-manager; mode "default"
             bindsym x exec flatpak run com.github.xournalpp.xournalpp; mode "default"
+            bindsym y exec YACReaderLibrary; mode "default"
 
             # back to normal
             bindsym Escape mode "default"
@@ -326,8 +328,8 @@ input "type:touchpad" {
 #
 # Tools key bindings:
 #
-    set $mode_config configs: [f]latseal [n]m-connection-editor system-config-[p]rinter flame[s]hot g[S]can2pdf pa[v]ucontrol
-    mode "$mode_config" {
+    set $mode_tools configs: [f]latseal [n]m-connection-editor system-config-[p]rinter flame[s]hot g[S]can2pdf pa[v]ucontrol
+    mode "$mode_tools" {
             bindsym f exec flatpak run com.github.tchx84.Flatseal; mode "default"
             bindsym n exec nm-connection-editor; mode "default"
             bindsym p exec system-config-printer; mode "default"
@@ -337,9 +339,9 @@ input "type:touchpad" {
 
             # back to normal
             bindsym Escape mode "default"
-            bindsym $mod+Control+c mode "default"
+            bindsym $mod+Control+t mode "default"
     }
-    bindsym $mod+Control+c mode "$mode_config"
+    bindsym $mod+Control+t mode "$mode_tools"
 
 
 #
