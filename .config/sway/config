@@ -24,14 +24,15 @@ set $menu dmenu_path | dmenu | xargs swaymsg exec --
 # We use variables to avoid repeating the names in multiple places.
 set $ws1 "1:"
 set $ws2 "2:"
-set $ws3 "3:"
+set $ws3 "3:"
 set $ws4 "4:"
 set $ws5 "5:"
-set $ws6 "6:"
-set $ws7 "7:"
-set $ws8 "8:"
-set $ws9 "9:"
-set $ws10 "10:"
+set $ws6 "6:"
+set $ws7 "7:"
+set $ws8 "8:"
+set $ws9 "9:"
+set $ws10 "10:"
+#set $ws10 "10:"
 
 # Nord colors
 # Polar Night
@@ -72,11 +73,11 @@ output eDP-1 mode 1920x1080 scale 1 position 0 0
 output "ViewSonic Corporation VX2363 Series U0G155000519" mode 1920x1080@60Hz scale 1 transform 270
 set $mode_screen Screens layout: [l]aptop e[x]ternal [o]ffice  [h]ome
 mode "$mode_screen" {
-    bindsym l output eDP-1 mode 1920x1080 scale 1 position 0 0, output HDMI-A-1 disable, output DP-2 disable, mode "default"
+    bindsym l output eDP-1 enable mode 1920x1080 scale 1 position 0 0, output HDMI-A-1 disable, output DP-2 disable, mode "default"
     bindsym x output eDP-1 disable, output HDMI-A-1 enable position 0 0, output DP-2 disable, mode "default"
-    bindsym Shift+x output eDP-1 disable, output HDMI-A-1 mode 1920x1080 position 0 0, output DP-2 disable, mode "default"
-    bindsym o output eDP-1 mode 1920x1080 scale 1 position 1080 840, output "ViewSonic Corporation VX2363 Series U0G155000519" enable mode 1920x1080@60Hz scale 1 transform 270 position 0 0, mode "default"
-    bindsym h output eDP-1 mode 1920x1080 scale 1 position 2560 360, output "Goldstar Company Ltd LG HDR 4K 0x0000C413" enable mode 3840x2160@60Hz scale 1.5 transform 0 position 0 0, mode "default"
+    bindsym Shift+x output eDP-1 disable, output HDMI-A-1 enable  mode 1920x1080 position 0 0, output DP-2 disable, mode "default"
+    bindsym o output eDP-1 enable mode 1920x1080 scale 1 position 1080 840, output "ViewSonic Corporation VX2363 Series U0G155000519" enable mode 1920x1080@60Hz scale 1 transform 270 position 0 0, mode "default"
+    bindsym h output eDP-1 enable mode 1920x1080 scale 1 position 2560 360, output "Goldstar Company Ltd LG HDR 4K 0x0000C413" enable mode 3840x2160@60Hz scale 1.5 transform 0 position 0 0, mode "default"
     #bindsym p output eDP-1 mode 1920x1080 scale 1 position 0 1080, output HDMI-A-1 mode 1920x1080 scale 1 position 0 0, output DP-2 enable, mode "default"
 
     # Return to default mode
