@@ -60,8 +60,8 @@ set $nord15 #b48ead
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
 #output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
-#output * bg ~/Wallpapers/002.jpg fill
-output * bg ~/Wallpapers/Altai/contents/images/base_size.png fill
+output * bg $nord0 solid_color
+#output * bg ~/Wallpapers/Altai/contents/images/base_size.png fill
 #
 # Example configuration:
 #
@@ -302,20 +302,22 @@ input "type:touchpad" {
 #
 # Application key bindings:
 #
-    #bindsym $mod+Control+b exec flatpak run io.gitlab.librewolf-community
+    bindsym $mod+Control+b exec flatpak run io.gitlab.librewolf-community
     #bindsym $mod+Control+b exec flatpak run org.mozilla.firefox
-    bindsym $mod+Control+b exec librewolf
+    #bindsym $mod+Control+b exec librewolf
     #bindsym $mod+Control+f exec ranger
     bindsym $mod+Control+f exec flatpak run org.kde.dolphin
     bindsym $mod+Control+v exec virt-manager
 
     # Application launcher layout
-    set $mode_app Applications: [b] libwolf(flatpak) [f] dolphin [k]keepassxc [o]kular qbit[t]orrent [v]irt-manager [x]ournalpp [y]acreader
+    set $mode_app Applications: [b]librewolf [f]dolphin [i]gwenview [k]keepassxc [o]kular libre[O]ffice  qbit[t]orrent [v]irt-manager [x]ournalpp [y]acreader
     mode "$mode_app" {
             bindsym b exec flatpak run io.gitlab.librewolf-community; mode "default"
-            bindsym k exec keepassxc; mode "default"
             bindsym f exec flatpak run org.kde.dolphin; mode "default"
+            bindsym i exec flatpak run org.kde.gwenview; mode "default"
+            bindsym k exec flatpak run org.keepassxc.KeePassXC; mode "default"
             bindsym o exec flatpak run org.kde.okular; mode "default"
+            bindsym Shift+o exec flatpak run org.libreoffice.LibreOffice; mode "default"
             bindsym t exec flatpak run org.qbittorrent.qBittorrent; mode "default"
             bindsym v exec virt-manager; mode "default"
             bindsym x exec flatpak run com.github.xournalpp.xournalpp; mode "default"
@@ -373,8 +375,8 @@ bindsym $mod+r mode "resize"
 
 # default floating
 for_window [app_id="pavucontrol"] floating enable
-for_window [title="(?i)preference*"] floating enable
-for_window [title="(?i)setting*"] floating enable
+for_window [title="^(?i)preference*"] floating enable
+for_window [title="^(?i)setting*"] floating enable
 
 #
 # Status Bar:
@@ -399,10 +401,13 @@ bar {
 
 
 # inactive window transparency
-exec python ~/.config/sway/inactive-windows-transparency.py --opacity 0.9
+exec python ~/.config/sway/inactive-windows-transparency.py --opacity 0.8
 
 # autostart graphical authentication
 exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+
+# xdg-desktop-portal-wlr
+exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
 
 #
 # colors
