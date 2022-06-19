@@ -31,7 +31,8 @@ alias mkdir='mkdir -p'
 alias pacsyu='sudo pacman -Syu'
 #alias systemctl='sudo systemctl'
 alias ssh='TERM=xterm-256color ssh'
-alias dd='dd bs=8M conv=noerror,sync status=progress'
+alias dd='dd bs=8M conv=sync status=progress'
+alias ddiso='sudo dd bs=8M conv=noerror,sync status=progress'
 #alias flatpak='flatpak --user'
 alias butane='podman run --rm --interactive       \
               --security-opt label=disable        \
