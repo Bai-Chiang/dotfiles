@@ -2,4 +2,4 @@
 	email = BaiChiang.Chiang@gmail.com
 	name = Bai-Chiang
 [core]
-	pager = less -R
+	pager = less -Q -R
