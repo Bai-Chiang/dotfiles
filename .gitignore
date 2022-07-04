@@ -1,5 +1,7 @@
 *
-!.gitignore
-!.config
-!.zshrc
-!.zprofile
+!/.gitignore
+!/.config
+!/.zshrc
+!/.zprofile
+!/.gitconfig
+!.config/**
