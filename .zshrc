@@ -22,7 +22,8 @@ export PATH="$HOME/.local/bin:$PATH"
 alias dotfiles="git --git-dir=${HOME}/.dotfiles/ --work-tree=${HOME}"    # dotfiles backup
 alias less='less -Q'    # Mute PC speaker in less
 alias man='man -P "less -Q"'
-alias dh='du -h --max-depth=1'
+alias duh='du -h --max-depth=1'
+alias df='df -h'
 #alias mv='mv -i'
 #alias cp='cp -i'
 #alias rm='rm -i'
