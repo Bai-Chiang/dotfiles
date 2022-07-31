@@ -348,6 +348,23 @@ input "type:touchpad" {
 
 
 #
+# Screenshot:
+#
+    set $mode_screenshot screenshot: [s/S]elect region (copy to clipboard/save to file) [f/F] Full screenshot 
+    mode "$mode_screenshot" {
+            bindsym s exec grim -g "$(slurp)" - | wl-copy ; mode "default"
+            bindsym Shift+s exec grim -g "$(slurp)" $HOME/$(date +'grim_%F_%T.png') ; mode "default"
+            bindsym f exec grim - | wl-copy ; mode "default"
+            bindsym Shift+f exec grim $HOME/$(date +'grim_%F_%T.png') ; mode "default"
+
+            # back to normal
+            bindsym Escape mode "default"
+            bindsym $mod+Control+Shift+s mode "default"
+    }
+    bindsym $mod+Control+Shift+s mode "$mode_screenshot"
+
+
+#
 # Resizing containers:
 #
 mode "resize" {
