@@ -19,7 +19,8 @@ set $term kitty
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
-set $menu dmenu_path | dmenu | xargs swaymsg exec --
+#set $menu dmenu_path | dmenu | xargs swaymsg exec --
+set $menu bemenu-run --ignorecase --scrollbar autohide --list 10 --monitor all --center --width-factor 0.8 | xargs swaymsg exec --
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
 set $ws1 "1:"
@@ -164,7 +165,7 @@ input "type:touchpad" {
     bindsym --locked XF86AudioPlay exec playerctl play-pause
     bindsym XF86AudioNext exec playerctl next
     bindsym XF86AudioPrev exec playerctl previous
-    bindsym XF86Search exec bemenu-run
+    bindsym XF86Search exec $menu
 
 #
 # Moving around:
