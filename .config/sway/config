@@ -308,6 +308,7 @@ input "type:touchpad" {
 #
     bindsym $mod+Control+b exec flatpak run io.gitlab.librewolf-community
     #bindsym $mod+Control+b exec flatpak run org.mozilla.firefox
+    bindsym $mod+Control+Shift+b exec firefox
     bindsym $mod+Control+f exec flatpak run org.kde.dolphin
     bindsym $mod+Control+v exec virt-manager
 
