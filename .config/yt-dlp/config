@@ -1,3 +1,4 @@
+--no-playlist
 --merge-output-format mkv
 --embed-metadata
 --embed-thumbnail
