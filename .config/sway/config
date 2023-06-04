@@ -127,6 +127,9 @@ input "type:keyboard" {
 input "1452:849:Apple_MTP_keyboard" {
     xkb_options ctrl:nocaps
 }
+input "12815:20565:Telink_FEKER_Alice80" {
+    xkb_options ctrl:nocaps
+}
 input "type:touchpad" {
     tap enabled
     natural_scroll enabled
