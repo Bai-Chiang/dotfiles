@@ -15,7 +15,8 @@ set $down j
 set $up k
 set $right l
 # Your preferred terminal emulator
-set $term kitty
+#set $term kitty
+set $term alacritty
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
@@ -71,6 +72,7 @@ output * bg $nord0 solid_color
 # You can get the names of your outputs by running: swaymsg -t get_outputs
 # known monitors
 output eDP-1 mode 1920x1080 scale 1 position 0 0
+output Unknown-1 mode 2560x1600 scale 1 position 0 0
 #output "ViewSonic Corporation VX2363 Series U0G155000519" mode 1920x1080@60Hz scale 1 transform 270
 output "Samsung Electric Company U28D590 HCPG300713" mode 3840x2160 scale 1
 set $mode_screen Screens layout: [l]aptop e[x]ternal [o]ffice [p]rojection [h]ome
@@ -310,23 +312,19 @@ input "type:touchpad" {
     #bindsym $mod+Control+b exec flatpak run org.mozilla.firefox
     bindsym $mod+Control+Shift+b exec firefox
     bindsym $mod+Control+f exec flatpak run org.kde.dolphin
-    bindsym $mod+Control+p exec flatpak run org.kde.okular
-    bindsym $mod+Control+i exec flatpak run org.kde.gwenview
+    #bindsym $mod+Control+p exec flatpak run org.kde.okular
+    bindsym $mod+Control+d exec flatpak run org.kde.okular
+    #bindsym $mod+Control+i exec flatpak run org.gnome.gThumb
+    #bindsym $mod+Control+x exec flatpak run com.github.xournalpp.xournalpp
     bindsym $mod+Control+v exec virt-manager
 
     # Application launcher layout
-    set $mode_app Applications: [b]librewolf [f]dolphin [i]gwenview [k]keepassxc [o]kular libre[o]ffice  qbit[t]orrent [v]irt-manager [x]ournalpp [y]acreader
+    set $mode_app Applications: [i]gwenview libre[o]ffice  qbit[t]orrent  [x]ournalpp
     mode "$mode_app" {
-            bindsym b exec flatpak run io.gitlab.librewolf-community; mode "default"
-            bindsym f exec flatpak run org.kde.dolphin; mode "default"
             bindsym i exec flatpak run org.kde.gwenview; mode "default"
-            bindsym k exec flatpak run org.keepassxc.KeePassXC; mode "default"
-            bindsym o exec flatpak run org.kde.okular; mode "default"
-            bindsym Shift+o exec flatpak run org.libreoffice.LibreOffice; mode "default"
+            bindsym o exec flatpak run org.libreoffice.LibreOffice; mode "default"
             bindsym t exec flatpak run org.qbittorrent.qBittorrent; mode "default"
-            bindsym v exec virt-manager; mode "default"
             bindsym x exec flatpak run com.github.xournalpp.xournalpp; mode "default"
-            bindsym y exec YACReaderLibrary; mode "default"
 
             # back to normal
             bindsym Escape mode "default"
