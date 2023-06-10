@@ -8,6 +8,10 @@ set hlsearch
 filetype plugin on
 syntax on
 
+" Color scheme
+set background=light
+colorscheme solarized
+
 " Visual wrapping
 "set nowrap "display long line as just one line
 set linebreak "prevent wrapping in the middle of word

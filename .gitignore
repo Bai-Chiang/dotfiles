@@ -1,7 +1,14 @@
 *
 !/.gitignore
-!/.config
+
+!/.gitconfig
+
 !/.zshrc
 !/.zprofile
-!/.gitconfig
+
+!/.vimrc
+!/.vim
+!/.vim/**
+
+!/.config
 !/.config/**
