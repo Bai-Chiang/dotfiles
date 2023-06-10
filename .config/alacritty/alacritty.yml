@@ -197,7 +197,7 @@ font:
 #draw_bold_text_with_bright_colors: false
 
 import:
-  - ~/.config/alacritty/nord.yml
+  - ~/.config/alacritty/solarized_light.yml
 # Colors (Tomorrow Night)
 #colors:
   # Default colors
