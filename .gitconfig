@@ -3,3 +3,5 @@
 	name = Bai-Chiang
 [core]
 	pager = less -Q -R
+[pull]
+	rebase = true
