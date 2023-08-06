@@ -9,8 +9,13 @@ filetype plugin on
 syntax on
 
 " Color scheme
-set background=light
+"set background=light
 colorscheme solarized
+if $TERM == 'linux'
+    set background=dark
+else
+    set background=light
+endif
 
 " Visual wrapping
 "set nowrap "display long line as just one line
