@@ -21,7 +21,8 @@ set $term kitty
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
 #set $menu dmenu_path | dmenu | xargs swaymsg exec --
-set $menu bemenu-run --ignorecase --scrollbar autohide --list 10 --monitor all --center --width-factor 0.8 | xargs swaymsg exec --
+#set $menu bemenu-run --ignorecase --scrollbar autohide --list 10 --monitor all --center --width-factor 0.8 | xargs swaymsg exec --
+set $menu fuzzel
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
 set $ws1 "1:"
@@ -73,6 +74,7 @@ output * bg $nord0 solid_color
 # known monitors
 output eDP-1 mode 1920x1080 scale 1 position 0 0
 output "Unknown Unknown Unknown" mode 2560x1600 scale 1.5 position 0 0
+output "LG Electronics LG HDR 4K 0x0000C413" mode 3840x2160 scale 1.25 position 0 0
 #output "ViewSonic Corporation VX2363 Series U0G155000519" mode 1920x1080@60Hz scale 1 transform 270
 output "Samsung Electric Company U28D590 HCPG300713" mode 3840x2160 scale 1
 set $mode_screen Screens layout: [l]aptop e[x]ternal [o]ffice [p]rojection [h]ome
@@ -134,6 +136,9 @@ input "1452:849:Apple_MTP_keyboard" {
     xkb_options ctrl:nocaps
 }
 input "13364:608:Keychron_Keychron_K6_Pro" {
+    xkb_options ctrl:nocaps
+}
+input "17498:5158:DZTECH_TOFU_JR" {
     xkb_options ctrl:nocaps
 }
 
