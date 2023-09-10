@@ -77,7 +77,8 @@ output "Unknown Unknown Unknown" mode 2560x1600 scale 1.5 position 0 0
 output "LG Electronics LG HDR 4K 0x0000C413" mode 3840x2160 scale 1.25 position 0 0
 output 'Video & Display Oriented Corporation PATH.HDR 66VIDEO' disable
 #output "ViewSonic Corporation VX2363 Series U0G155000519" mode 1920x1080@60Hz scale 1 transform 270
-output "Samsung Electric Company U28D590 HCPG300713" mode 3840x2160 scale 1
+output "Samsung Electric Company U28D590 Unknown" mode 3840x2160 scale 1.25 position 0 0
+output "LDR CFORCE 0x000036A1" mode 3840x2160 scale 1.25 position 3072 0
 set $mode_screen Screens layout: [l]aptop e[x]ternal [o]ffice [p]rojection [h]ome
 mode "$mode_screen" {
     bindsym l output eDP-1 enable mode 1920x1080 scale 1 position 0 0, output HDMI-A-1 disable, output DP-2 disable, mode "default"
@@ -129,6 +130,9 @@ input "type:touchpad" {
     tap_button_map lrm
     scroll_method two_finger
 }
+input "type:pointer" {
+    accel_profile adaptive
+}
 input "type:keyboard" {
     xkb_options ctrl:nocaps,altwin:swap_lalt_lwin
     xkb_numlock enabled
@@ -137,6 +141,9 @@ input "1452:849:Apple_MTP_keyboard" {
     xkb_options ctrl:nocaps
 }
 input "13364:608:Keychron_Keychron_K6_Pro" {
+    xkb_options ctrl:nocaps
+}
+input "13364:608:Keychron_K6_Pro_Keyboard" {
     xkb_options ctrl:nocaps
 }
 input "17498:5158:DZTECH_TOFU_JR" {
