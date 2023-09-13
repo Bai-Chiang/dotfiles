@@ -9,7 +9,7 @@ if [ -z $DISPLAY ] && [ "$(tty)" = "/dev/tty1" ]; then
     export QT_QPA_PLATFORMTHEME=kde
     export QT_QPA_PLATFORM=wayland
     export RANGER_LOAD_DEFAULT_RC=false
-    export XCURSOR_SIZE=16
+    export XCURSOR_SIZE=24
     exec sway
     #exec Hyprland
 fi

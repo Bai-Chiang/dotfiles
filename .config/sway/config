@@ -77,8 +77,8 @@ output "Unknown Unknown Unknown" mode 2560x1600 scale 1.5 position 0 0
 output "LG Electronics LG HDR 4K 0x0000C413" mode 3840x2160 scale 1.25 position 0 0
 output 'Video & Display Oriented Corporation PATH.HDR 66VIDEO' disable
 #output "ViewSonic Corporation VX2363 Series U0G155000519" mode 1920x1080@60Hz scale 1 transform 270
-output "Samsung Electric Company U28D590 Unknown" mode 3840x2160 scale 1.25 position 0 0
-output "LDR CFORCE 0x000036A1" mode 3840x2160 scale 1.25 position 3072 0
+output "Samsung Electric Company U28D590 Unknown" mode 3840x2160 scale 1.5 position 0 0
+output "LDR CFORCE 0x000036A1" mode 3840x2160 scale 1.5 position 2560 0
 set $mode_screen Screens layout: [l]aptop e[x]ternal [o]ffice [p]rojection [h]ome
 mode "$mode_screen" {
     bindsym l output eDP-1 enable mode 1920x1080 scale 1 position 0 0, output HDMI-A-1 disable, output DP-2 disable, mode "default"
