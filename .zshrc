@@ -28,7 +28,8 @@ alias mkdir='mkdir -p'
 alias ssh='TERM=xterm-256color ssh'
 alias icat="kitty +kitten icat --align left"
 alias flatpak='flatpak --user'
-alias conda='micromamba'
+alias mamba='micromamba'
+alias pf='sudo pacman -Syu && poweroff'
 
 
 # >>> mamba initialize >>>
