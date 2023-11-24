@@ -30,6 +30,7 @@ alias icat="kitty +kitten icat --align left"
 alias flatpak='flatpak --user'
 alias mamba='micromamba'
 alias pf='sudo pacman -Syu && poweroff'
+alias mpv="MPV_HOME=$HOME/.config/mpv io.mpv.Mpv"
 
 
 # >>> mamba initialize >>>
