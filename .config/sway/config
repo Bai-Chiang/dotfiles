@@ -74,7 +74,7 @@ output * bg $nord0 solid_color
 # known monitors
 #output eDP-1 mode 1920x1080 scale 1 position 0 0
 #output "Unknown Unknown Unknown" mode 2560x1600 scale 1.5 position 0 0
-#output "LG Electronics LG HDR 4K 0x0000C413" mode 3840x2160 scale 1.25 position 0 0
+output "LG Electronics LG HDR 4K 0x0000C413" mode 3840x2160 scale 1.25 position 0 0
 #output 'Video & Display Oriented Corporation PATH.HDR 66VIDEO' disable
 #output "ViewSonic Corporation VX2363 Series U0G155000519" mode 1920x1080@60Hz scale 1 transform 270
 output "Samsung Electric Company U28D590 Unknown" mode 3840x2160 scale 1.5 position 0 0
