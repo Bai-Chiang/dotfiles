@@ -3,3 +3,4 @@
 --embed-metadata
 --embed-thumbnail
 --embed-subs
+--compat-options no-live-chat
