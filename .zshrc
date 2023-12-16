@@ -17,6 +17,7 @@ source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # PATH
 export PATH="$HOME/bin:$HOME/.local/bin:$PATH"
+export PASSWORD_STORE_GPG_OPTS="--homedir $HOME/.password-store/gnupg"
 
 # alias
 alias dotfiles="git --git-dir=${HOME}/.dotfiles/ --work-tree=${HOME}"    # dotfiles backup
