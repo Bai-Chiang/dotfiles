@@ -1,7 +1,12 @@
 [user]
 	email = contact@bai-chiang.com
 	name = Bai-Chiang
+	signingkey = EAB39BCBC303B346F498FA21F192D293C6988DA5
 [core]
 	pager = less -Q -R
 [pull]
 	rebase = true
+[tag]
+	forceSignAnnotated = true
+[commit]
+	gpgSign = true

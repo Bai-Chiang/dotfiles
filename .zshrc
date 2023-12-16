@@ -17,6 +17,8 @@ source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # PATH
 export PATH="$HOME/bin:$HOME/.local/bin:$PATH"
+
+export GPG_TTY=$(tty)
 export PASSWORD_STORE_GPG_OPTS="--homedir $HOME/.password-store/gnupg"
 
 # alias
