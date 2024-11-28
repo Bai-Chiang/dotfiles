@@ -16,7 +16,12 @@ source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # PATH
-export PATH="$HOME/bin:$HOME/.local/bin:$PATH"
+if [ -d "$HOME/.local/bin" ]; then
+    export PATH="$HOME/.local/bin:$PATH"
+fi
+if [ -d "$HOME/bin" ]; then
+    export PATH="$HOME/bin:$PATH"
+fi
 
 export GPG_TTY=$(tty)
 export PASSWORD_STORE_GPG_OPTS="--homedir $HOME/.password-store/gnupg"
