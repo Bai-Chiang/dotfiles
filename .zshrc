@@ -20,7 +20,6 @@ export PATH="$HOME/bin:$HOME/.local/bin:$PATH"
 
 export GPG_TTY=$(tty)
 export PASSWORD_STORE_GPG_OPTS="--homedir $HOME/.password-store/gnupg"
-export DBX_CONTAINER_HOME_PREFIX="$HOME/distrobox"
 
 # alias
 alias dotfiles="git --git-dir=${HOME}/.dotfiles/ --work-tree=${HOME}"    # dotfiles backup
@@ -36,7 +35,6 @@ alias mamba='micromamba'
 alias pf='sudo pacman -Syu && poweroff'
 alias mpv="MPV_HOME=$HOME/.config/mpv io.mpv.Mpv"
 alias diff='diff --color -u'
-#alias distrobox create='distrobox create --unshare-all --init'
 
 
 # >>> mamba initialize >>>

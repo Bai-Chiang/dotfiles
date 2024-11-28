@@ -1,115 +1,81 @@
 [
 {
     //"output": "eDP-1",
-    // "layer": "top", // Waybar at top layer
-    "position": "top", // Waybar position (top|bottom|left|right)
-    // "height": 30, // Waybar height (to be removed for auto height)
-    // "width": 1280, // Waybar width
+    "layer": "top", // Waybar is displayed in front (top) of the windows or behind (bottom) them.
+    "position": "top", // Waybar position (top|bottom|left|right).
+    "spacing": 4, // Size of gaps in between of the different modules.
+    "margin": 0,
+    "mode": "dock", // Equivalent of the sway-bar(5) mode command (dock|hide|invisible|overlay).
+    "exclusive": true, // Request an exclusive zone from the compositor, disallow drawing application windows underneath or on top of the bar.
 
     // Choose the order of the modules
     "modules-left": [
+        //"image#arch",
         "sway/workspaces",
-        //"custom/media",
         "tray",
-        "sway/mode"
+        "sway/mode",
     ],
-    "modules-center": [
-        //"sway/window",
-        //"tray",
-        ""
-    ],
+    //"modules-center": [
+    //    "sway/window",
+    //],
     "modules-right": [
-        //"mpd",
-        //"cpu",
+        "privacy",
+        "group/hardware",
+        //"wireplumber",
         "pulseaudio",
-        //"temperature",
-        "memory",
-        //"backlight",
-        //"sway/language",
-        //"battery#bat2",
-        "network#wifi",
-        "network#eth",
         "idle_inhibitor",
-        "keyboard-state",
-        "battery",
-        "clock"
+        "clock",
     ],
 
     // Modules configuration
+    "image#arch": {
+        "path": "/usr/share/pixmaps/archlinux-logo.svg",
+        "tooltip": false,
+    },
+
     "sway/workspaces": {
-        "disable-scroll": true,
-        "all-outputs": false,
-        "format": "{index} {name}",
-        //"format-icons": {
-        //    "1": "",
-        //    "2": "",
-        //    "3": "",
-        //    "4": "",
-        //    "5": "",
-        //    "urgent": "",
-        //    "focused": "",
-        //    "default": ""
-        //}
+        "disable-scroll": true, // Disable cycle through workspaces.
+        "all-outputs": false, // Displays only title of the window on the same output as bar.
+        "disable-auto-back-and-forth": true,  // Clicking on a workspace you are already on won't do anything
+        "format": "{value}  ",
     },
-    "keyboard-state": {
-        "numlock": true,
-        "capslock": true,
-        "format": "{name} {icon}",
-        "format-icons": {
-            "locked": "",
-            "unlocked": ""
-        }
-    },
-    //"sway/mode": {
-    //    "format": "<span style=\"italic\">{}</span>"
-    //},
-    //"mpd": {
-    //    "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ {volume}% ",
-    //    "format-disconnected": "Disconnected ",
-    //    "format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped ",
-    //    "unknown-tag": "N/A",
-    //    "interval": 2,
-    //    "consume-icons": {
-    //        "on": " "
-    //    },
-    //    "random-icons": {
-    //        "off": "<span color=\"#f53c3c\"></span> ",
-    //        "on": " "
-    //    },
-    //    "repeat-icons": {
-    //        "on": " "
-    //    },
-    //    "single-icons": {
-    //        "on": "1 "
-    //    },
-    //    "state-icons": {
-    //        "paused": "",
-    //        "playing": ""
-    //    },
-    //    "tooltip-format": "MPD (connected)",
-    //    "tooltip-format-disconnected": "MPD (disconnected)"
-    //},
-    "idle_inhibitor": {
-        "format": "{icon}",
-        "format-icons": {
-            "activated": "Idle Inhibitor ",
-            "deactivated": "Idle Inhibitor "
-        }
-    },
+
     "tray": {
-        // "icon-size": 21,
-        "spacing": 10
+        "spacing": 10,
+        "show-passive-items": false,
     },
-    "clock": {
-        // "timezone": "America/New_York",
-        "format": "{:   %Y-%m-%d     %H:%M}",
-        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><big>{calendar}</big></tt>",
-        // "format-alt": "{:%Y-%m-%d}"
+
+    "sway/mode": {
+        "format": "{}",
     },
-    "cpu": {
-        "format": "{usage}% ",
-        "tooltip": false
+
+    "privacy": {
+        "modules": [
+            {
+                "type": "screenshare",
+                "tooltip": true,
+            },
+            {
+                "type": "audio-in",
+                "tooltip": true,
+            },
+        ]
     },
+
+    "group/hardware": {
+        "orientation": "inherit",
+        "modules": [
+            "memory",
+            "network#eth",
+            "network#wifi",
+            "cpu",
+        ],
+        "drawer": {
+            "click-to-reveal": true,
+            "transition-left-to-right": false,
+        },
+    },
+
     "memory": {
         "interval": 1,
         "format": "  {avail:0.2f}GiB  available",
@@ -118,86 +84,98 @@
             "critical": 90
         }
     },
-    "temperature": {
-        // "thermal-zone": 2,
-        // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
-        "critical-threshold": 80,
-        // "format-critical": "{temperatureC}°C {icon}",
-        "format": "{icon} {temperatureC}°C",
-        "format-icons": ["", "", ""]
-    },
-    //"backlight": {
-    //    // "device": "acpi_video1",
-    //    "format": "{percent}% {icon}",
-    //    "format-icons": ["", ""]
-    //},
-    "battery": {
-        "states": {
-            // "good": 95,
-            "warning": 30,
-            "critical": 15
-        },
-        "format": "{icon}   {capacity}%",
-        "format-charging": "   {capacity}%",
-        "format-plugged": "   {capacity}%",
-        "format-alt": "{icon}   {time}",
-        // "format-good": "", // An empty format will hide the module
-        // "format-full": "",
-        "format-icons": ["", "", "", "", ""]
-    },
-    //"battery#bat2": {
-    //    "bat": "BAT2"
-    //},
-    "network#wifi": {
-        "interface": "wl*",
+
+    "cpu": {
         "interval": 1,
-        "format-wifi": "    {essid}",
-        "tooltip-format-wifi": "   {essid}   ({signalStrength}% {frequency}MHz) {ipaddr}/{cidr}  {bandwidthUpBits} {bandwidthDownBits}",
-        "format-disconnected": "  Disconnected",
-        //"format-alt": "  {ifname}"
+        "format": "  {}%",
+        "tooltip": false
     },
+
     "network#eth": {
         "interface": "en*",
         "interval": 1,
         "format-ethernet": "   Connected",
-        "tooltip-format-ethernet": " {ifname} {ipaddr}/{cidr} {bandwidthUpBits} {bandwidthDownBits}",
-        "format-linked": "  (No IP)",
+        "tooltip-format-ethernet": "   {ifname} {ipaddr}/{cidr}    {bandwidthUpBits}  {bandwidthDownBits}",
+        "format-linked": "   (No IP)",
         "format-disconnected": "   Disconnected",
-        //"format-alt": "{ifname}"
+    },
+
+    "network#wifi": {
+        "interface": "wl*",
+        "interval": 1,
+        "format-wifi": "   {essid}",
+        "tooltip-format-wifi": "   {essid}   ({signalStrength}% {frequency}GHz) {ipaddr}/{cidr}    {bandwidthUpBits}  {bandwidthDownBits}",
+        "format-disconnected": "",  // An empty format will hide the module.
+        "format": "",
+    },
+
+    "wireplumber": {
+        "format": "{volume}% {icon}",
+        "format-icons": ["", "", ""],
+        "format-muted": "",
+        "on_clic": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+        "on-click-right": "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle",
     },
     "pulseaudio": {
-        // "scroll-step": 1, // %, can be a float
-        "format": "{icon} {volume}%  {format_source}",
-        "format-bluetooth": "{icon}   {volume}%  {format_source}",
-        "format-bluetooth-muted": "       {icon} {format_source}",
-        "format-muted": "       {format_source}",
-        "format-source": "   {volume}%",
-        "format-source-muted": "      ",
+        "format": "{icon}  {volume}%  {format_source}",
+        "format-muted": "     {format_source}",
+        "format-bluetooth": "{icon}  {volume}%  {format_source}",
+        "format-bluetooth-muted": "     {format_source}",
+        "format-source": "  {volume}%",
+        "format-source-muted": "  ",
         "format-icons": {
             "headphone": "",
             "hands-free": "",
             "headset": "",
             "phone": "",
+            "phone-muted": "",
             "portable": "",
             "car": "",
-            "default": ["", "", ""]
+            "default": ["", ""]
         },
-        "on_clic": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
-        "on-click-right": "pavucontrol",
-        "on_clic-middle": "pactl set-source-mute @DEFAULT_SOURCE@ toggle"
+        "on_clic": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+        "on-click-right": "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle",
+        "scroll-step": 1,
+        "ignored-sinks": ["Easy Effects Sink"],
+        "tooltip": false,
     },
-    //"custom/media": {
-    //    "format": "{icon} {}",
-    //    "return-type": "json",
-    //    "max-length": 40,
-    //    "format-icons": {
-    //        "spotify": "",
-    //        "default": "🎜"
-    //    },
-    //    "escape": true,
-    //    "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
-    //    // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
-    //}
+
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "Idle Inhibitor ",
+            "deactivated": "Idle Inhibitor "
+        },
+        "start-activated": true,
+        "tooltip": false,
+    },
+
+    "clock": {
+        "interval": 30,
+        "format": "  {:L%Y-%m-%d  %H:%M  %a }",
+        "tooltip-format": "<tt><big>{calendar}</big></tt>",
+        "calendar": {
+                    "mode"          : "month",
+                    "mode-mon-col"  : 3,
+                    "weeks-pos"     : "right",
+                    "on-scroll"     : 1,
+                    "format": {
+                              "months":     "<span color='#ebcb8b'>{}</span>",
+                              "days":       "<span color='#d8dee9'>{}</span>",
+                              "weeks":      "<span color='#b48ead'>W{}</span>",
+                              "weekdays":   "<span color='#a3be8c'>{}</span>",
+                              "today":      "<span color='#bf616a'><b><u>{}</u></b></span>"
+                              }
+                    },
+        "actions":  {
+                    "on-click": "mode",
+                    "on-click-right": "mode",
+                    "on-scroll-up": "shift_down",
+                    "on-scroll-down": "shift_up"
+                    }
+    },
+
+
 }
 
 ]
