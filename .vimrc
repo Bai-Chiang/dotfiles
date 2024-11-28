@@ -51,9 +51,9 @@ augroup yaml_indent
     autocmd FileType yaml setlocal ts=2 sts=2 sw=2 indentkeys-=0# indentkeys-=<:>
 augroup END
 
-" 120 characters
-" set colorcolumn=121
-" highlight ColorColumn ctermbg=8
+" 80 characters
+set colorcolumn=80,120
+" highlight ColorColumn ctermbg=238
 
 " fold mode
 " set foldenable

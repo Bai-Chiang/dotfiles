@@ -10,3 +10,7 @@
 	forceSignAnnotated = true
 [commit]
 	gpgSign = true
+[remote "upstream"]
+	prune = true
+	pruneTags = true
+	tagopt = --tags

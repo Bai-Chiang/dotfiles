@@ -106,6 +106,9 @@ input "13364:608:Keychron_Keychron_K6_Pro" {
 input "13364:608:Keychron_K6_Pro_Keyboard" {
     xkb_options ctrl:nocaps
 }
+input "type:tablet_tool" {
+    map_to_output DP-1
+}
 
 ### Key bindings
 #

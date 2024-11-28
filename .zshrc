@@ -23,7 +23,7 @@ export PASSWORD_STORE_GPG_OPTS="--homedir $HOME/.password-store/gnupg"
 
 # alias
 alias dotfiles="git --git-dir=${HOME}/.dotfiles/ --work-tree=${HOME}"    # dotfiles backup
-alias less='less -Q'    # Mute PC speaker in less
+alias less='less -Q -I'    # Mute PC speaker in less and ignore case when search
 alias man='man -P "less -Q"'
 alias duh='du -h --max-depth=1'
 alias df='df -h'
