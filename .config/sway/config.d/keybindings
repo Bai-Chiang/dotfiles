@@ -24,6 +24,9 @@
     # Exit sway (logs you out of your Wayland session)
     bindsym $mod+$alt+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
 
+    # Lock screen
+    bindsym $mod+$alt+l exec 'swaylock -f -c 2e3440'
+
     # control volume, brightness, media players
     bindsym --locked XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +2%
     bindsym --locked XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -2%
