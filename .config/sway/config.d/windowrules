@@ -1,0 +1,4 @@
+# default floating
+#for_window [title="^(?i)preference*"] floating enable
+#for_window [title="^(?i)setting*"] floating enable
+

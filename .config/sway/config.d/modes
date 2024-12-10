@@ -1,0 +1,42 @@
+#
+# Screenshot:
+#
+    set $mode_screenshot screenshot: [s/S]elect region (copy to clipboard/save to file) [f/F] Full screenshot
+    mode "$mode_screenshot" {
+            bindsym s exec grim -g "$(slurp)" - | wl-copy ; mode "default"
+            bindsym Shift+s exec grim -g "$(slurp)" $HOME/screenshots/$(date +'grim_%F_%T.png') ; mode "default"
+            bindsym f exec grim - | wl-copy ; mode "default"
+            bindsym Shift+f exec grim $HOME/screenshots/$(date +'grim_%F_%T.png') ; mode "default"
+
+            # back to normal
+            bindsym Escape mode "default"
+            bindsym $mod+Control+Shift+s mode "default"
+    }
+    bindsym $mod+Control+Shift+s mode "$mode_screenshot"
+
+
+#
+# Resizing containers:
+#
+mode "resize" {
+    # left will shrink the containers width
+    # right will grow the containers width
+    # up will shrink the containers height
+    # down will grow the containers height
+    bindsym $left resize shrink width 5ppt
+    bindsym $down resize grow height 5ppt
+    bindsym $up resize shrink height 5ppt
+    bindsym $right resize grow width 5ppt
+
+    # Ditto, with arrow keys
+    bindsym Left resize shrink width 5ppt
+    bindsym Down resize grow height 5ppt
+    bindsym Up resize shrink height 5ppt
+    bindsym Right resize grow width 5ppt
+
+    # Return to default mode
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+bindsym $mod+r mode "resize"
+
