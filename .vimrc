@@ -15,12 +15,16 @@ syntax on
 " Color scheme
 "set background=light
 "colorscheme solarized
-"if $TERM == 'linux'
-"    set background=dark
-"else
-"    set background=light
-"endif
 colorscheme nord
+
+set cursorline
+set termguicolors
+
+"if $TERM == 'linux'
+"    " tty
+"else
+"    " gui
+"endif
 
 " Visual wrapping
 "set nowrap "display long line as just one line
