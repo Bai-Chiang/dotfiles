@@ -1,3 +1,4 @@
-function duh --wraps du --description 'alias dh=du -h --max-depth=1'
-    command du -h --max-depth=1 $argv
+function duh --wraps='du -h --max-depth=1' --description 'alias duh=du -h --max-depth=1'
+    du -h --max-depth=1 $argv
+
 end

@@ -1,4 +1,4 @@
-# Mute PC speaker in less
-function less --description 'less -Q'
-    command less -Q $argv
+function less --description 'alias less=less -Q -I'
+    command less -Q -I $argv
+
 end

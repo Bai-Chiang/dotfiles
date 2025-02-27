@@ -1,3 +1,4 @@
-function dfh --wraps df --description 'df -h'
-    command df -h $argv
+function dfh --wraps='df -h' --description 'alias dfh=df -h'
+    df -h $argv
+
 end
