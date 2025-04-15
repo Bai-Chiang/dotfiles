@@ -68,6 +68,7 @@
 # Application key bindings:
 #
     bindsym $mod+Control+b exec flatpak run io.gitlab.librewolf-community
+    bindsym $mod+Shift+Control+b exec flatpak run io.gitlab.librewolf-community --private-window
     #bindsym $mod+Control+f exec flatpak run org.kde.dolphin
 
     ## Application launcher layout
