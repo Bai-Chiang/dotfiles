@@ -17,13 +17,10 @@ input "type:keyboard" {
 input "17498:5158:DZTECH_TOFU_JR" {
     xkb_options ctrl:nocaps
 }
+input "20037:13877:NEO_Studio_NEO65_ANSI" {
+    xkb_options ctrl:nocaps
+}
 input "1452:849:Apple_MTP_keyboard" {
-    xkb_options ctrl:nocaps
-}
-input "13364:608:Keychron_Keychron_K6_Pro" {
-    xkb_options ctrl:nocaps
-}
-input "13364:608:Keychron_K6_Pro_Keyboard" {
     xkb_options ctrl:nocaps
 }
 input "type:tablet_tool" {

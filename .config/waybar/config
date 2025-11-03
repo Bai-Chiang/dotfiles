@@ -1,6 +1,6 @@
 [
 {
-    //"output": "eDP-1",
+    //"output": "DP-1",
     "layer": "top", // Waybar is displayed in front (top) of the windows or behind (bottom) them.
     "position": "top", // Waybar position (top|bottom|left|right).
     "spacing": 4, // Size of gaps in between of the different modules.

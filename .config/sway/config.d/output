@@ -4,9 +4,7 @@
 output * bg $black solid_color
 
 output "LG Electronics LG HDR 4K 0x0004C413" mode 3840x2160 scale 1.5 position 0 0
-
 output "Dell Inc. DELL G2724D 67016Y3" mode 2560x1440 scale 1 position 0 0
-output "LG Electronics LG HDR WQHD 0x0002678B" scale 1 position 2560 0 transform 0
 
 #set $mode_screen Screens layout: [p]resentation
 #mode "$mode_screen" {
