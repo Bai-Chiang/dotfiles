@@ -37,6 +37,7 @@
         "disable-scroll": true, // Disable cycle through workspaces.
         "all-outputs": false, // Displays only title of the window on the same output as bar.
         "disable-auto-back-and-forth": true,  // Clicking on a workspace you are already on won't do anything
+        // 󰍹  \udb80\udf79
         "format": "{value} \udb80\udf79",
     },
 
@@ -78,6 +79,7 @@
 
     "memory": {
         "interval": 1,
+        //   \uefc5
         "format": "\uefc5 {avail:0.2f}GiB available",
         "states": {
             "warning": 70,
@@ -87,6 +89,7 @@
 
     "cpu": {
         "interval": 1,
+        //   \uf4bc
         "format": "\uf4bc {}%",
         "tooltip": false
     },
@@ -94,8 +97,11 @@
     "network#eth": {
         "interface": "en*",
         "interval": 1,
+        //   \uef44
         "format-ethernet": "\uef44 Connected",
-        "tooltip-format-ethernet": "\uef44 {ifname} {ipaddr}/{cidr}   \ueaa1 {bandwidthUpBits} \uf063 {bandwidthDownBits}",
+        //   \uf062
+        //   \uf063
+        "tooltip-format-ethernet": "\uef44 {ifname} {ipaddr}/{cidr}   \uf062 {bandwidthUpBits} \uf063 {bandwidthDownBits}",
         "format-linked": "\uef44 (No IP)",
         "format-disconnected": "\uef44 Disconnected",
     },
@@ -103,18 +109,27 @@
     "network#wifi": {
         "interface": "wl*",
         "interval": 1,
+        //   \uf1eb
         "format-wifi": "\uf1eb {essid}",
-        "tooltip-format-wifi": "\uf1eb {essid}   ({signalStrength}% {frequency}GHz) {ipaddr}/{cidr}   \ueaa1 {bandwidthUpBits} \uf063 {bandwidthDownBits}",
+        //   \uf062
+        //   \uf063
+        "tooltip-format-wifi": "\uf1eb {essid}   ({signalStrength}% {frequency}GHz) {ipaddr}/{cidr}   \uf062 {bandwidthUpBits} \uf063 {bandwidthDownBits}",
         "format-disconnected": "",  // An empty format will hide the module.
         "format": "",
     },
 
     "wireplumber": {
         "format": "{icon} {volume}%  {format_source}",
+        //   \uf026
+        //   \uf027
+        //   \uf028
+        //   \ueee8
         "format-icons": ["\uf026", "\uf027", "\uf028"],
         "format-muted": "\ueee8",
-        "format-source": "\uec1c {volume}%",
-        "format-source-muted": "\uf131",
+        //   \uf130
+        //   \uf131
+        "format-source": "\uf130 {volume}%",
+        "format-source-muted": "\uf131         ",
         "on_clic": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
         "on-click-right": "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle",
         "scroll-step": 1,
@@ -148,6 +163,8 @@
     "idle_inhibitor": {
         "format": "{icon}",
         "format-icons": {
+            //   \uf205
+            //   \uf204
             "activated": "Idle Inhibitor \uf205",
             "deactivated": "Idle Inhibitor \uf204"
         },
@@ -157,6 +174,7 @@
 
     "clock": {
         "interval": 30,
+        //   \uf073
         "format": "\uf073 {:L%Y-%m-%d %H:%M %a }",
         "tooltip-format": "<tt><big>{calendar}</big></tt>",
         "calendar": {
