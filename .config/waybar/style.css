@@ -24,7 +24,8 @@
     border: none;
     border-radius: 0;
     /* `otf-font-awesome` is required to be installed for icons */
-    font-family: Roboto, Helvetica, Arial, sans-serif;
+    /*font-family: 'Symbols Nerd Font Mono', 'Noto Sans', DejaVuSansMono;*/
+    font-family: 'Symbols Nerd Font Mono', 'DejaVu Sans Mono';
     font-size: 12px;
     min-height: 0;
 }

@@ -21,8 +21,8 @@
     "modules-right": [
         "privacy",
         "group/hardware",
-        //"wireplumber",
-        "pulseaudio",
+        "wireplumber",
+        //"pulseaudio",
         "idle_inhibitor",
         "clock",
     ],
@@ -37,7 +37,7 @@
         "disable-scroll": true, // Disable cycle through workspaces.
         "all-outputs": false, // Displays only title of the window on the same output as bar.
         "disable-auto-back-and-forth": true,  // Clicking on a workspace you are already on won't do anything
-        "format": "{value}  ",
+        "format": "{value} \udb80\udf79",
     },
 
     "tray": {
@@ -78,7 +78,7 @@
 
     "memory": {
         "interval": 1,
-        "format": "  {avail:0.2f}GiB  available",
+        "format": "\uefc5 {avail:0.2f}GiB available",
         "states": {
             "warning": 70,
             "critical": 90
@@ -87,64 +87,69 @@
 
     "cpu": {
         "interval": 1,
-        "format": "  {}%",
+        "format": "\uf4bc {}%",
         "tooltip": false
     },
 
     "network#eth": {
         "interface": "en*",
         "interval": 1,
-        "format-ethernet": "   Connected",
-        "tooltip-format-ethernet": "   {ifname} {ipaddr}/{cidr}    {bandwidthUpBits}  {bandwidthDownBits}",
-        "format-linked": "   (No IP)",
-        "format-disconnected": "   Disconnected",
+        "format-ethernet": "\uef44 Connected",
+        "tooltip-format-ethernet": "\uef44 {ifname} {ipaddr}/{cidr}   \ueaa1 {bandwidthUpBits} \uf063 {bandwidthDownBits}",
+        "format-linked": "\uef44 (No IP)",
+        "format-disconnected": "\uef44 Disconnected",
     },
 
     "network#wifi": {
         "interface": "wl*",
         "interval": 1,
-        "format-wifi": "   {essid}",
-        "tooltip-format-wifi": "   {essid}   ({signalStrength}% {frequency}GHz) {ipaddr}/{cidr}    {bandwidthUpBits}  {bandwidthDownBits}",
+        "format-wifi": "\uf1eb {essid}",
+        "tooltip-format-wifi": "\uf1eb {essid}   ({signalStrength}% {frequency}GHz) {ipaddr}/{cidr}   \ueaa1 {bandwidthUpBits} \uf063 {bandwidthDownBits}",
         "format-disconnected": "",  // An empty format will hide the module.
         "format": "",
     },
 
     "wireplumber": {
-        "format": "{volume}% {icon}",
-        "format-icons": ["", "", ""],
-        "format-muted": "",
-        "on_clic": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
-        "on-click-right": "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle",
-    },
-    "pulseaudio": {
-        "format": "{icon}  {volume}%  {format_source}",
-        "format-muted": "     {format_source}",
-        "format-bluetooth": "{icon}  {volume}%  {format_source}",
-        "format-bluetooth-muted": "     {format_source}",
-        "format-source": "  {volume}%",
-        "format-source-muted": "  ",
-        "format-icons": {
-            "headphone": "",
-            "hands-free": "",
-            "headset": "",
-            "phone": "",
-            "phone-muted": "",
-            "portable": "",
-            "car": "",
-            "default": ["", ""]
-        },
+        "format": "{icon} {volume}%  {format_source}",
+        "format-icons": ["\uf026", "\uf027", "\uf028"],
+        "format-muted": "\ueee8",
+        "format-source": "\uec1c {volume}%",
+        "format-source-muted": "\uf131",
         "on_clic": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
         "on-click-right": "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle",
         "scroll-step": 1,
-        "ignored-sinks": ["Easy Effects Sink"],
-        "tooltip": false,
+        //"tooltip": false,
+        "only-physical": true,
     },
+    //"pulseaudio": {
+    //    "format": "{icon} {volume}%  {format_source}",
+    //    "format-muted": "\ueee8 {format_source}",
+    //    "format-bluetooth": "\udb80\udcaf{icon} {volume}%  {format_source}",
+    //    "format-bluetooth-muted": "\udb80\udcaf  {format_source}",
+    //    "format-source": "\uec1c {volume}%",
+    //    "format-source-muted": "\uf131",
+    //    "format-icons": {
+    //        "headphone": "",
+    //        "hands-free": "",
+    //        "headset": "",
+    //        "phone": "",
+    //        "phone-muted": "",
+    //        "portable": "",
+    //        "car": "",
+    //        "default": ["", ""]
+    //    },
+    //    "on_clic": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+    //    "on-click-right": "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle",
+    //    "scroll-step": 1,
+    //    "ignored-sinks": ["Easy Effects Sink"],
+    //    "tooltip": false,
+    //},
 
     "idle_inhibitor": {
         "format": "{icon}",
         "format-icons": {
-            "activated": "Idle Inhibitor ",
-            "deactivated": "Idle Inhibitor "
+            "activated": "Idle Inhibitor \uf205",
+            "deactivated": "Idle Inhibitor \uf204"
         },
         "start-activated": true,
         "tooltip": false,
@@ -152,7 +157,7 @@
 
     "clock": {
         "interval": 30,
-        "format": "  {:L%Y-%m-%d  %H:%M  %a }",
+        "format": "\uf073 {:L%Y-%m-%d %H:%M %a }",
         "tooltip-format": "<tt><big>{calendar}</big></tt>",
         "calendar": {
                     "mode"          : "month",
